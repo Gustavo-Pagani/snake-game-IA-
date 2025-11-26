@@ -32,7 +32,7 @@ void animacao_inicial() {
     printf("\n");
     Sleep(15);
 }
-void imprimir_tabuleiro(Cobra *cobra) {
+void imprimir_tabuleiro(Cobra *cobra, Fruta *fruta) {
     int i, j, k;
 
     // Borda superior
@@ -47,6 +47,11 @@ void imprimir_tabuleiro(Cobra *cobra) {
 
         for (j = 0; j < LARGURA; j++) {
             int desenhou = 0;
+
+            if (fruta->x == j && fruta->y == i){
+                printf("*");
+                desenhou = 1;
+            }
 
             // Verifica se a posição coincide com a cobra
             for (k = 0; k < cobra->tamanho; k++) {
