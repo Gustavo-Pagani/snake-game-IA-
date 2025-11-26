@@ -2,7 +2,7 @@
 #include <windows.h>
 #include "tabuleiro/tabuleiro.h"
 #include "cobra/cobra.h"
-
+#include "input/input.h"
 int main() {
     Cobra cobra;
     inicializar_cobra(&cobra);
@@ -12,6 +12,7 @@ int main() {
     system("cls");
 
     while (1){
+        atualizar_direcao(&cobra);
         mover_cobra(&cobra);
         system("cls");
         imprimir_tabuleiro(&cobra);
