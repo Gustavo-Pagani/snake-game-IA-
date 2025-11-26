@@ -1,8 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "tabuleiro/tabuleiro.h"
-int main()
-{
-    imprimir_tabuleiro();
+#include "cobra/cobra.h"
+
+int main() {
+    Cobra cobra;
+    inicializar_cobra(&cobra);
+
+    imprimir_tabuleiro(&cobra);
+
     return 0;
 }

@@ -1,11 +1,8 @@
+#include <stdio.h>
 #include "tabuleiro.h"
-#include<stdio.h>
-#include<windows.h>
-
-
-
-void imprimir_tabuleiro() {
-    int i, j;
+#include <windows.h>
+void imprimir_tabuleiro(Cobra *cobra) {
+    int i, j, k;
 
     // Borda superior
     for (i = 0; i < LARGURA + 2; i++) {
@@ -14,13 +11,30 @@ void imprimir_tabuleiro() {
     }
     printf("\n");
 
-    // Laterais
+    // Área interna
     for (i = 0; i < ALTURA; i++) {
         printf("%c",219);  // Borda esquerda
         Sleep(5);
+
         for (j = 0; j < LARGURA; j++) {
-            printf(" ");  // Espaço vazio (será preenchido depois)
+            int desenhou = 0;
+
+            // Verifica se a posição coincide com a cobra
+            for (k = 0; k < cobra->tamanho; k++) {
+                if (cobra->x[k] == j && cobra->y[k] == i) {
+                    if (k == 0)
+                        printf("S");  // Cabeça
+                    else
+                        printf("o");  // Corpo
+                    desenhou = 1;
+                    break;
+                }
+            }
+
+            if (!desenhou)
+                printf(" ");
         }
+
         printf("%c\n",219);  // Borda direita
         Sleep(5);
     }

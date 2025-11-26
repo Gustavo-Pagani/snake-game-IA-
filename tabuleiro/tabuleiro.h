@@ -1,9 +1,11 @@
 #ifndef TABULEIRO_H
 #define TABULEIRO_H
 
-#define ALTURA 20   // Pode ajustar depois
-#define LARGURA 30  // Pode ajustar depois
+#include "../cobra/cobra.h"  // Importa a cobra para imprimir
 
-void imprimir_tabuleiro();
+#define ALTURA 20
+#define LARGURA 40
+
+void imprimir_tabuleiro(Cobra *cobra);
 
 #endif
