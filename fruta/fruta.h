@@ -10,4 +10,5 @@ typedef struct {
 
 void gerar_fruta(Fruta *fruta, Cobra *cobra);
 
+
 #endif

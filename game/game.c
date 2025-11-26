@@ -18,3 +18,14 @@ int verificar_morte(Cobra *cobra) {
     return 0; // Ainda vivo
 }
 
+
+void verificar_comida(Cobra *cobra, Fruta *fruta){
+
+    if (cobra->x[0] == fruta->x && cobra->y[0] == fruta->y){
+        cobra->tamanho++;
+        gerar_fruta(fruta, cobra);
+    }
+
+
+}
+

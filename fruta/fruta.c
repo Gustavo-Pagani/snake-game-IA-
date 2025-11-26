@@ -20,3 +20,5 @@ void gerar_fruta(Fruta *fruta, Cobra *cobra) {
         }
     } while (!valido);
 }
+
+
