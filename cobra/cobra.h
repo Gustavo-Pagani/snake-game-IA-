@@ -20,4 +20,7 @@ typedef struct {
 
 void inicializar_cobra(Cobra *cobra);
 
+void mover_cobra(Cobra *cobra);
+
+
 #endif

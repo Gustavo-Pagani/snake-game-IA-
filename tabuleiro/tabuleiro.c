@@ -1,20 +1,49 @@
 #include <stdio.h>
 #include "tabuleiro.h"
 #include <windows.h>
+#include <stdio.h>
+#include <windows.h> // Para Sleep()
+#include "tabuleiro.h"
+
+void animacao_inicial() {
+    int i, j;
+
+    // Borda superior
+    for (i = 0; i < LARGURA + 2; i++) {
+        printf("%c", 219);
+    }
+    printf("\n");
+    Sleep(15);
+
+    // Área interna (sem cobra ainda)
+    for (i = 0; i < ALTURA; i++) {
+        printf("%c", 219); // Borda esquerda
+        for (j = 0; j < LARGURA; j++) {
+            printf(" ");
+        }
+        printf("%c\n", 219); // Borda direita
+        Sleep(15); // Delay por linha
+    }
+
+    // Borda inferior
+    for (i = 0; i < LARGURA + 2; i++) {
+        printf("%c", 219);
+    }
+    printf("\n");
+    Sleep(15);
+}
 void imprimir_tabuleiro(Cobra *cobra) {
     int i, j, k;
 
     // Borda superior
     for (i = 0; i < LARGURA + 2; i++) {
         printf("%c",219);
-        Sleep(5);
     }
     printf("\n");
 
     // Área interna
     for (i = 0; i < ALTURA; i++) {
         printf("%c",219);  // Borda esquerda
-        Sleep(5);
 
         for (j = 0; j < LARGURA; j++) {
             int desenhou = 0;
@@ -36,13 +65,14 @@ void imprimir_tabuleiro(Cobra *cobra) {
         }
 
         printf("%c\n",219);  // Borda direita
-        Sleep(5);
     }
 
     // Borda inferior
     for (i = 0; i < LARGURA + 2; i++) {
         printf("%c",219);
-        Sleep(5);
     }
     printf("\n");
 }
+
+
+

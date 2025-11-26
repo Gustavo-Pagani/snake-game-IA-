@@ -6,6 +6,7 @@
 #define ALTURA 20
 #define LARGURA 40
 
+void animacao_inicial();
 void imprimir_tabuleiro(Cobra *cobra);
 
 #endif

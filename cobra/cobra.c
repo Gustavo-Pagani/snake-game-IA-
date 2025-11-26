@@ -30,3 +30,28 @@ void inicializar_cobra(Cobra *cobra) {
             break;
     }
 }
+
+
+void mover_cobra(Cobra *cobra){
+    for (int i = cobra->tamanho - 1; i>0; i--){ //Nao conta a cabeça
+        cobra->x[i] = cobra->x[i - 1];
+        cobra->y[i] = cobra->y[i - 1];
+    }
+
+    switch (cobra->direcao){
+    case DIREITA:
+        cobra->x[0] += 1;
+        break;
+    case ESQUERDA:
+        cobra->x[0] -= 1;
+        break;
+    case CIMA:
+        cobra->y[0] -= 1;
+        break;
+    case BAIXO:
+        cobra->y[0] += 1;
+        break;
+    }
+
+}
+
